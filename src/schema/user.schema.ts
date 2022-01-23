@@ -1,5 +1,4 @@
 import { string, object, TypeOf } from "zod"
-
 export const createUserSchema = object({
     body: object({
         name: string({
