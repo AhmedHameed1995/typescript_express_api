@@ -45,7 +45,6 @@ export async function getProductHandler(
 ) {
     const productId = req.params.productId
     const product = await findProduct({productId})
-    
     if(!product) {
         return res.sendStatus(404)
     }

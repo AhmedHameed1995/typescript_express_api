@@ -2,7 +2,7 @@ import ProductModel, { ProductDocument, ProductInput } from "../models/product.m
 import { FilterQuery, QueryOptions, UpdateQuery } from 'mongoose';
 
 export async function createProduct(
-    input: ProductInput
+    input: Omit<ProductInput,'productId'>
 ) {
     return ProductModel.create(input)
 }

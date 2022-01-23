@@ -39,7 +39,7 @@ function routes(app: Express) {
 
     app.get(
         "/api/products/:productId", 
-        [requireUser, validateResource(getProductSchema)], 
+        [validateResource(getProductSchema)], 
         getProductHandler
     );
 
