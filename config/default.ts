@@ -1,5 +1,6 @@
 export default {
     port: 1337,
+    origin: 'http://localhost:3000',
     dbUri: "mongodb+srv://lamadb:lamadb@cluster0.14vxy.mongodb.net/typescript_rest_api?retryWrites=true&w=majority",
     saltWorkFactor: 10,
     accessTokenTtl: '15m',

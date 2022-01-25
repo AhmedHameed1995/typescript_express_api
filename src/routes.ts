@@ -2,7 +2,7 @@ import { Express, Request, Response } from 'express'
 import requireUser from './middleware/requireUser';
 import validateResource from './middleware/validateResource';
 import { createUserSchema } from './schema/user.schema';
-import { createUserHandler } from './controller/user.controller';
+import { createUserHandler, getCurrentUser } from './controller/user.controller';
 import { createSessionSchema } from './schema/session.schema';
 import { createUserSessionHandler, getUserSessionHandler, deleteSessionHandler } from './controller/session.controller';
 import { createProductSchema, deleteProductSchema, getProductSchema, updateProductSchema } from './schema/product.schema';
@@ -18,6 +18,8 @@ function routes(app: Express) {
     })
     
     app.post("/api/users", validateResource(createUserSchema), createUserHandler);
+
+    app.get("/api/me", requireUser, getCurrentUser);
 
     app.post("/api/sessions", validateResource(createSessionSchema), createUserSessionHandler);
 
