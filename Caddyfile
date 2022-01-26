@@ -1,0 +1,5 @@
+rest-api.itwebdevs.com {
+    reverse_proxy rest-api-typescript-server:1337 {
+        header_down Strict-Transport-Security max-age=31536000;
+    }
+}
