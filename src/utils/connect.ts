@@ -8,6 +8,8 @@ function connect() {
     return mongoose.connect(dbUri)
     .then(() => {
         logger.info('Connected to DB')
+        logger.info(`DB URL : ${dbUri}`)
+        
     }).catch((error) => {
         console.error('Could not connect to DB')
         process.exit(1);        
